@@ -16,6 +16,7 @@ public class Main {
 				}
 			}
 			new Pagination(amazonPage).Next();
+			amazonPage.Wait(10);
 		}
 	}
 }

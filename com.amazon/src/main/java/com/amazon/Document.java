@@ -1,6 +1,7 @@
 package com.amazon;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,11 @@ public class Document {
 		_driver.navigate().to(URL);
 	}
 	
-	protected void finalize()  
+	public void Wait(int seconds) {
+		_driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+	}
+	
+	protected void finalize()
 	{  
 		this._driver.close();
 	}
